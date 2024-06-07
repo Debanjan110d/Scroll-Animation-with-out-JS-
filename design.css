@@ -1,0 +1,55 @@
+h1 {
+  text-align: center;
+}
+.block {
+  margin: 10px;
+  margin-bottom: 60px;
+  padding: 21px;
+  border: 3px solid black;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.block:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  background-color: hsl(random(360), 100%, 50%);
+}
+
+.block:nth-child(2) {
+  width: 120px;
+  height: 120px;
+  background-color: hsl(random(360), 100%, 50%);
+}
+
+.block:nth-child(3) {
+  width: 100px;
+  height: 150px;
+  background-color: hsl(random(360), 100%, 50%);
+}
+
+/* Add more blocks as needed */
+
+.view {
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0px);
+  }
+}
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
